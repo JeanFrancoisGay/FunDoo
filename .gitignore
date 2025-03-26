@@ -1,0 +1,67 @@
+# Ignore Visual Studio specific files
+.vs/
+
+# Ignore build results
+bin/
+obj/
+out/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore logs, database, and test results
+*.log
+*.tlog
+*.cache
+TestResults/
+
+# Ignore package dependencies
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+
+# Ignore Azure related files
+appservice.deploy.readme.txt
+appservice.zip.deploy.readme.txt
+
+# Ignore Resharper files
+*.ReSharper*
+*_Resharper*
+
+# Ignore Rider files
+.idea/
+
+# Ignore JetBrains Rider workspace
+*.sln.iml
+
+# Ignore Code Coverage results
+*.coverage
+*.coveragexml
+
+# Ignore publish outputs
+publish/
+
+# Ignore secrets and configuration files
+secrets.json
+appsettings*.json
+
+# Ignore Entity Framework Migrations
+Migrations/
+
+# Ignore temporary files
+*.tmp
+~$*
+
+# Ignore compiled files
+*.dll
+*.exe
+*.pdb
+*.appx
+*.appxbundle
+*.msi
+*.msp
+*.zip
