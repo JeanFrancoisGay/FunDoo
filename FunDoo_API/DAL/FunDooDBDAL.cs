@@ -30,11 +30,11 @@ namespace FunDoo_API.DAL
                 {
                     items.Add(new ToDoItemModel
                     {
-                        Id = reader.GetInt32(0),
-                        Title = reader.GetString(1),
-                        Description = reader.GetString(2),
-                        DueDate = reader.GetDateTime(3),
-                        IsCompleted = reader.GetBoolean(4)
+                        Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                        Title = reader.GetString(reader.GetOrdinal("Title")),
+                        Description = reader.GetString(reader.GetOrdinal("Description")),
+                        DueDate = reader.GetDateTime(reader.GetOrdinal("DueDate")),
+                        IsCompleted = reader.GetBoolean(reader.GetOrdinal("IsCompleted"))
                     });
                 }
                 return items;
@@ -54,11 +54,11 @@ namespace FunDoo_API.DAL
                 {
                     return new ToDoItemModel
                     {
-                        Id = reader.GetInt32(0),
-                        Title = reader.GetString(1),
-                        Description = reader.GetString(2),
-                        DueDate = reader.GetDateTime(3),
-                        IsCompleted = reader.GetBoolean(4)
+                        Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                        Title = reader.GetString(reader.GetOrdinal("Title")),
+                        Description = reader.GetString(reader.GetOrdinal("Description")),
+                        DueDate = reader.GetDateTime(reader.GetOrdinal("DueDate")),
+                        IsCompleted = reader.GetBoolean(reader.GetOrdinal("IsCompleted"))
                     };
                 }
                 return null;
