@@ -4,9 +4,53 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FunDoo_WPF"
+        xmlns:conv="clr-namespace:FunDoo_WPF.Converters"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <conv:CompletedToColorConverter x:Key="CompletedToColorConverter"/>
+        <conv:DateToVisibilityConverter x:Key="DateToVisibilityConverter"/>
+        <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
     <Grid>
+        <ListView ItemsSource="{Binding ToDoItems}" Margin="10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="10" Margin="5" CornerRadius="10"
+                            Background="{Binding IsCompleted, Converter={StaticResource CompletedToColorConverter}}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Checkbox -->
+                            <CheckBox IsChecked="{Binding IsCompleted}" Margin="10"
+                                      VerticalAlignment="Center"/>
+
+                            <!-- Text Content -->
+                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                                <TextBlock Text="{Binding Title}" FontSize="16" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Description}" FontSize="12" Foreground="Gray"/>
+                                <TextBlock Text="{Binding DueDate, StringFormat='Due: {0:MMM dd, yyyy}'}"
+                                           FontSize="12" Foreground="DarkRed" Visibility="{Binding DueDate, Converter={StaticResource DateToVisibilityConverter}}"/>
+                            </StackPanel>
+
+                            <!-- Due Date -->
+                            <TextBlock Grid.Column="2"
+                                       Text="✔ Completed"
+                                       Foreground="Green"
+                                       FontSize="14"
+                                       FontWeight="Bold"
+                                       Visibility="{Binding IsCompleted, Converter={StaticResource BoolToVisibilityConverter}}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </Grid>
 </Window>

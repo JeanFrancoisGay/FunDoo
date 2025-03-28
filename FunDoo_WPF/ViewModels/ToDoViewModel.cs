@@ -26,7 +26,7 @@ namespace FunDoo_WPF.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public List<ToDoItemModel> ToDoItemModels 
+        public List<ToDoItemModel> ToDoItems
         {
             get
             {
@@ -35,7 +35,7 @@ namespace FunDoo_WPF.ViewModels
             private set 
             { 
                 toDoItemModels = value;
-                RaisePropertyChanged("ToDoItemModels");
+                RaisePropertyChanged("ToDoItems");
             }
         }
 
@@ -48,7 +48,7 @@ namespace FunDoo_WPF.ViewModels
         {
             try
             {
-                this.ToDoItemModels = await FunDoo_API.GetAllToDoItems();
+                this.ToDoItems = await FunDoo_API.GetAllToDoItems();
             }
             catch (Exception ex)
             {
