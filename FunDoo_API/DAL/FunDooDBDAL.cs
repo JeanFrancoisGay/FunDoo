@@ -33,7 +33,7 @@ namespace FunDoo_API.DAL
                         Id = reader.GetInt32(reader.GetOrdinal("Id")),
                         Title = reader.GetString(reader.GetOrdinal("Title")),
                         Description = reader.GetString(reader.GetOrdinal("Description")),
-                        DueDate = reader.GetDateTime(reader.GetOrdinal("DueDate")),
+                        DueDate = reader.IsDBNull(reader.GetOrdinal("DueDate")) ? null : reader.GetDateTime(reader.GetOrdinal("Name")),
                         IsCompleted = reader.GetBoolean(reader.GetOrdinal("IsCompleted"))
                     });
                 }
