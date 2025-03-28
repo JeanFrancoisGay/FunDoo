@@ -1,5 +1,3 @@
-USE FunDoo_DB
-GO
 
 IF EXISTS (SELECT 1 FROM sys.objects where name = 'tblTodoItem') DROP TABLE tblTodoItem;
 GO
@@ -30,6 +28,9 @@ BEGIN
 	WHERE	TD.Id = ISNULL(@Id, TD.Id)
 
 END
+GO
+
+GRANT EXEC ON spTodoItem_Get TO FunDooDbUser;
 GO
 
 CREATE OR ALTER PROC spTodoItem_Insert

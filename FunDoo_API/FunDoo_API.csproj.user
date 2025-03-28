@@ -4,6 +4,6 @@
     <ActiveDebugProfile>https</ActiveDebugProfile>
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common</Controller_SelectedScaffolderCategoryPath>
-    <NameOfLastUsedPublishProfile>C:\Source\PersoGit\FunDoo\.github\workflows\FunDooAPI20250326090227.yml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Source\PersoGit\FunDoo\FunDoo_API\Properties\PublishProfiles\FunDooAPIApp1 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
