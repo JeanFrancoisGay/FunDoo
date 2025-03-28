@@ -14,6 +14,10 @@ CREATE TABLE [dbo].[tblTodoItem]
 );
 GO
 
+INSERT tblTodoItem (Title, Description, DueDate, IsCompleted) VALUES ('Item #1', 'My first test item (scripted)', NULL, 0)
+INSERT tblTodoItem (Title, Description, DueDate, IsCompleted) VALUES ('Item #22', 'A second item, just for fun (scripted)', NULL, 0)
+GO
+
 CREATE OR ALTER PROC spTodoItem_Get
 				@Id INT = NULL
 AS

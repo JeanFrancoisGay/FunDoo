@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using FunDoo_WPF.ViewModels;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +17,13 @@ namespace FunDoo_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        ToDoViewModel vm;
+
         public MainWindow()
         {
             InitializeComponent();
+            vm = new ToDoViewModel();
+            base.DataContext = vm;
         }
     }
 }
